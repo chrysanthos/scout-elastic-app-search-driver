@@ -103,19 +103,19 @@ class ElasticAppProxy
     /**
      * Dynamically call the Elastic client instance. Add the engine name to methods that require it.
      *
-     * @param string $method
-     * @param array $parameters
-     *
+     * @param  string  $method
+     * @param  array  $parameters
      * @return mixed
+     *
      * @throws EngineNotInitialisedException
      */
     public function __call($method, $parameters)
     {
-        if (!method_exists($this->client, $method)) {
-            throw new \BadMethodCallException($method . ' method not found on ' . get_class($this->client));
+        if (! method_exists($this->client, $method)) {
+            throw new \BadMethodCallException($method.' method not found on '.get_class($this->client));
         }
 
-        if ($method !== 'listEngines' && !$this->engine) {
+        if ($method !== 'listEngines' && ! $this->engine) {
             throw new EngineNotInitialisedException('Unable to proxy call to Elastic App Client, no Engine initialised');
         }
 

@@ -281,7 +281,7 @@ class AppSearchCustomKeySearchableModel extends SearchableModel
 {
     public function getScoutKey()
     {
-        return 'my-key.' . $this->getKey();
+        return 'my-key.'.$this->getKey();
     }
 }
 

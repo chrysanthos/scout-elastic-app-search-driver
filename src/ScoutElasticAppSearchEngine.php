@@ -2,10 +2,10 @@
 
 namespace Chrysanthos\ScoutElasticAppSearch;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Arr;
 use Laravel\Scout\Builder;
 use Laravel\Scout\Engines\Engine;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ScoutElasticAppSearchEngine extends Engine
 {
@@ -27,8 +27,7 @@ class ScoutElasticAppSearchEngine extends Engine
      * Create a new engine instance.
      *
      * @param  ElasticAppProxy  $proxy
-     * @param bool $softDelete
-     *
+     * @param  bool  $softDelete
      * @return void
      */
     public function __construct(ElasticAppProxy $proxy, bool $softDelete = false)
