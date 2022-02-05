@@ -1,0 +1,60 @@
+{
+    "name": "chrysanthos/scout-elastic-app-search-driver",
+    "description": "Laravel Scout Adapter for Elastic Enterprise App Search",
+    "keywords": [
+        "chrysanthos",
+        "app-search",
+        "laravel",
+        "laravel scout",
+        "scout-elastic-app-search-driver"
+    ],
+    "homepage": "https://github.com/chrysanthos/scout-elastic-app-search-driver",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Chrysanthos Prodromou",
+            "email": "me@chrysanthos.xyz",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0|^8.1",
+        "elastic/enterprise-search": "^7.1",
+        "laravel/scout": "^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.17",
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chrysanthos\\ScoutElasticAppSearch\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Chrysanthos\\ScoutElasticAppSearch\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Chrysanthos\\ScoutElasticAppSearch\\ScoutElasticAppSearchServiceProvider"
+            ],
+            "aliases": {
+                "ScoutElasticAppSearch": "Chrysanthos\\ScoutElasticAppSearch\\ScoutElasticAppSearchFacade"
+            }
+        }
+    }
+}
