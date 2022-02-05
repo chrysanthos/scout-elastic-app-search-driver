@@ -41,3 +41,24 @@ Once you have added the Searchable Trait to your model. You will be able to sear
 ``` php 
  $result = Model::search($searchTerm)->get();
 ```
+
+## Testing
+
+``` bash
+composer test
+```
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Security
+
+If you discover any security related issues, please email me@chrysanthos.xyz instead of using the issue tracker.
+
+## Credits
+- [Keoghan Litchfield](https://github.com/konsulting) (Initial work)
+
+## Licence
+This package is [Treeware](https://treeware.earth). If you use it in production, then we ask that you [**buy the world a tree**](https://plant.treeware.earth/chrysanthos/scout-elastic-app-search-driver) to thank us for our work. By contributing to the Treeware forest you’ll be creating employment for local families and restoring wildlife habitats.
+
