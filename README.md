@@ -28,7 +28,7 @@ SCOUT_ELASTIC_APP_SEARCH_ENDPOINT=
 SCOUT_ELASTIC_APP_SEARCH_API_KEY=
 ```
 
-You will also need to adjust `config/scout.php` so that the chunk sizes are 100 records:
+You must also adjust your `config/scout.php` file so that the chunk sizes are up to 100 records. (This is needed because App Search only allows importing up to 100 records at a time.)
 
 ```php
 'chunk' => [
